@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+    *{margin: 0;padding: 0;}
+    ul{list-style: none;}
+    img{display: block;}
+    h1,h2,h3{font-size: 16px;font-weight: normal;}
+    a{text-decoration: none;color: #333333;}
+    html,body{font-family: Arial;height: 100%;overflow-y: hidden;}
+    .l{float: left;}
+    .r{float: right;}
+    .clear:after{content: "";display: block;clear: both;}
+
+
+    #header{height: 80px;background: #018ffb;border-top: 5px solid #424147;}
+    #header .header_logo{display: inline-block;}
+    #header .header_logo h1{margin:19px 14px 0 20px;}
+    #header .header_logo h2{color: white;font-size: 24px; line-height: 25px;margin-top: 28px;}
+    #header .header_nav{margin-top: 33px;line-height: 14px;font-size: 14px;}
+    #header .header_nav li{float: left;color: white;margin-right: 25px;}
+    #header .header_nav a{color: white;margin-right: 8px;}
+    #header .header_nav i.iconwode{font-size: 24px;position: relative;top:4px;line-height: 8px;}
+
+    #menu{width: 200px;background: #424147;height: calc(100% - 85px);}
+    #menu ul{color: #9a999e;text-align: center;}
+    #menu li{height: 140px;border-bottom: 1px solid #3a393e;border-top: 1px solid #49484e;}
+    #menu li.active{color: white;background: #4e4d53;}
+    #menu li a{color: inherit;width: 100%;height: 100%;display: block;padding-top: 35px;box-sizing: border-box;}
+    #menu li i{font-size: 40px;}
+    #menu li p{margin-top: 15px;}
+
+    #main{overflow: hidden;height: calc(100% -85px -50px);}
+    #main .main_containter{height: 100%;overflow: auto;}
+    
+    #projectTitle .projectTitle_text h2{margin-left: 22px;margin-top: 5px;font-size: 24px;color: #333333;line-height: 25px;}
+    #projectTitle .projectTitle_text  i{margin-left: 31px;font-size: 22px;}
+    #projectTitle .projectTitle_text p{margin-left: 22px; margin-top: 10px;font-size: 14px;color: #333333;}
+    #projectTitle .projectTitle_text  span{color: #999999;}
+    #projectTitle .imges{width: 200px;height: 149px;margin-left: 1100px; margin-top: 20px;}
+
+    #button .button_group{height: 54px;background: #f1f9fc;border-top: 1px solid #e0eaef;border-bottom: 1px #dbe7ed solid;}
+    #button ul{margin: 14px 0 0 20px;}
+    #button li{float: left;width: 108px;height: 39px;border: 1px #dbe7ed solid;border-bottom: none;background: #fbfeff;
+    color: #666666;text-align: center;line-height: 39px;margin-right: 12px;border-radius: 5px 5px 0 0;cursor: pointer;}
+    #button li.active{color: white; background: #018FFB;position: relative;}
+    #button li.active:after{content: "";display: block;position: absolute;width: 11px;height: 6px;
+    background: url('./imges/4.png') no-repeat;bottom: -6px;margin-left: 50px;}
+    
+    
+    
+    .show .upload1 input , .show .upload2 input{display: none;}
+    .show .upload1 label , .show .upload2 label{cursor: pointer;}
+    .show .upload1 {width: 110px;height: 32px;border: 1px solid #5FD15C;border-radius: 3px;
+    background-color: #5FD15C;margin-left: 20px; color: white;
+    text-align: center;font-size: 14px;line-height: 32px;margin-top: 20px;}
+    .show .upload2 {width: 110px;height: 32px;border: 1px solid #34C1DA;border-radius: 3px;
+     background-color: #34C1DA;margin-left: 20px; color: white;
+     text-align: center;font-size: 14px;line-height: 32px;margin-top: 20px;}
+    .show .search {width: 210px;height: 32px;border: 1px solid #dbe7ed;border-radius: 5px;overflow: hidden;
+    margin-top: 20px;margin-right: 20px;}
+    .show .search input{border: none;width: 177px;height: 100%;color: #999999;font-size: 14px;text-indent: 9px;}
+    .show .search button{width: 32px;height: 32px;border: none;border-left: 1px #dbe7ed solid;
+    background-image: linear-gradient(#fcfdfd,#f1f9fc);cursor: pointer;}
+    .show .search i{font-size: 18px;font-weight: bold;color: #A1C6D4;}
+
+    .table{clear: both;width: 1298px;border: 1px solid #dbe7ed;font-size: 12px;border-collapse: collapse;
+    position: relative;top:20px;margin-left: 20px;margin-right: 20px;}
+    .table tr{height: 32px;border-bottom: 1px solid #e7eff3;}
+    .table tr:hover{background: #f1f9fc;}
+    .table td{text-indent: 12px;}
+    .table th{border-right: 1px solid #dbe7ed;color: #666666;font-weight: normal;text-align: left;
+    text-indent: 12px;background: #DBE7ED;}
+    .table th:first-child{text-align: center;text-indent: 0;}
+    .table td:first-child{text-align: center;text-indent: 0;}
+    .table .iconword{margin-right: 13px;color: #0173ca;}
+    .table .iconxiazai{color: #3da2f0;}
+    .table .iconshanchu{color: #d94141;}
+
+    .footer1{height: 70px;border: 1px solid #dbe7ed;border-top: none;margin-top: 20px;}
+    .remove{margin-right: 15px;margin-left: 22px;margin-top: 18px; width: 78px;height: 24px;border: 1px solid #c9e4f1;border-radius: 3px;
+    background-image: linear-gradient(#f7fcff,#e7f4fa);font-size: 12px;color: #1B84BA;cursor: pointer;}
+    .download{margin-top: 18px; width: 78px;height: 24px;border: 1px solid #c9e4f1;border-radius: 3px;
+    background-image: linear-gradient(#f7fcff,#e7f4fa);font-size: 12px;color: #1B84BA;cursor: pointer;}
+    .page{font-size: 12px;line-height: 24px;margin: 22px 18px 0 0;font-size: 0;}
+    .page a{border: 1px solid #e6e6e6;padding: 6px 9px;font-size: 12px;margin-left: 10px;}
+    .page  .active{border: 1px solid #3797E0;background: #3797E0;}
+
+    
+
+
+
+
+    #footer{height: 49px;border-top: 1px solid #dbe7ed;background: #f1f9fc;text-align: right;
+    font-size: 12px;
+    color: #888888;
+    line-height: 49px;
+    margin-right: 20px;}
+    </style>
+</head>
+<body>
+    <header id="header">
+        <hgroup class="header_logo l">
+         <h1 class="l">
+             <img src="./imges/logo.png" alt="">
+             
+         </h1>
+         <h2 class="l" >正达建筑内部管理平台</h2>
+       
+        </hgroup>
+        <ul class="header_nav r">
+            <li><i class="iconfont iconwode"></i><a href="#"></a> 欢迎您，武剑 管理员</li>
+            <li><i class="iconfont iconkey"></i><a href="#"></a> 修改密码</li>
+            <li><i class="iconfont iconshouye1-copy"></i><a href="#"></a> 公司官网</li>
+            <li><i class="iconfont iconfenxiang"></i><a href="#"></a> 退出</li>
+        </ul>
+    </header>
+    <aside id="menu" class="l">
+        <ul>
+            <li class="active">
+                <a href="#">
+                    <i class="iconfont iconloukongguanli"></i>
+                    <p>项目管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont iconyonghuxinxi"></i>
+                    <p>用户管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont iconshezhi"></i>
+                    <p>系统设置</p>
+                </a>
+             </li>
+        </ul>
+    </aside>
+    <main id="main">
+        <section class="mian_container">
+          <section id="projectTitle">
+            <div class="projectTitle_text l">
+                <h2>青田高湾绿园一期、二期工程<i class="iconfont iconbianji"></i></h2>
+                <p>
+                   项目编号：<span>CN0000507</span>
+                   <br>
+                   项目类型：<span>在建工程</span>
+                   <br> 
+                   项目负责人：<span>梅海丽</span>
+                   <br> 
+                   手机号码：<span>15869168567</span>
+                </p>
+            </div> 
+            <div class="imges"><img src="./imges/3.jpg" alt=""></div>
+        </section>
+      </section>
+      <section id="button">
+          <div class="button_group">
+          <ul>
+              <li>视频监控</li>
+              <li>考勤管理</li>
+              <li>安全巡查</li>
+              <li class="active">资料管理</li>
+          </ul>
+        
+          </div>
+      </section>
+    <div class="show">  
+        <div class="upload1 l">
+            <label>
+                     <input type="file">
+                    <i class="iconfont iconshangchuan"></i>&nbsp;&nbsp;&nbsp;单个上传
+            </label>
+
+        </div>
+        <div class="upload2 l">
+            <label>
+                    <input type="file" multiple>
+                    <i class="iconfont iconshangchuan1"></i>&nbsp;&nbsp;&nbsp;批量上传
+            </label>
+        </div>
+        <div class="search r">
+            <input type="text" placeholder="请输入关键字" ><button><i class="iconfont iconsousuo"></i></button>
+        </div>
+    </div>
+
+   <table class="table">
+       <thead>
+           <tr>
+               <th width="49"><input type="checkbox"></th>
+               <th>文档名称</th>
+               <th width="167">文档大小</th>
+               <th width="148">上传者</th>
+               <th width="168">上传时间</th>
+               <th width="81">操作</th>  
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td><input type="checkbox"></td>
+               <td><i class="iconfont iconword"></i> 安全专项方案.doc</td>
+               <td>21.3kB</td>
+               <td>陈文理</td>
+               <td>2016-03-14</td>
+               <td><i class="iconfont iconxiazai"></i>&nbsp;&nbsp;&nbsp;<i class="iconfont iconshanchu"></i></td>
+           </tr>
+       </tbody>
+       <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><i class="iconfont iconword"></i> 安全专项方案.doc</td>
+                <td>21.3kB</td>
+                <td>陈文理</td>
+                <td>2016-03-14</td>
+                <td><i class="iconfont iconxiazai"></i>&nbsp;&nbsp;&nbsp;<i class="iconfont iconshanchu"></i></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><i class="iconfont iconword"></i> 安全专项方案.doc</td>
+                <td>21.3kB</td>
+                <td>陈文理</td>
+                <td>2016-03-14</td>
+                <td><i class="iconfont iconxiazai"></i>&nbsp;&nbsp;&nbsp;<i class="iconfont iconshanchu"></i></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><i class="iconfont iconword"></i> 安全专项方案.doc</td>
+                <td>21.3kB</td>
+                <td>陈文理</td>
+                <td>2016-03-14</td>
+                <td><i class="iconfont iconxiazai"></i>&nbsp;&nbsp;&nbsp;<i class="iconfont iconshanchu"></i></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><i class="iconfont iconword"></i> 安全专项方案.doc</td>
+                <td>21.3kB</td>
+                <td>陈文理</td>
+                <td>2016-03-14</td>
+                <td><i class="iconfont iconxiazai"></i>&nbsp;&nbsp;&nbsp;<i class="iconfont iconshanchu"></i></td>
+            </tr>
+        </tbody>
+        <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><i class="iconfont iconword"></i> 安全专项方案.doc</td>
+                    <td>21.3kB</td>
+                    <td>陈文理</td>
+                    <td>2016-03-14</td>
+                    <td><i class="iconfont iconxiazai"></i>&nbsp;&nbsp;&nbsp;<i class="iconfont iconshanchu"></i></td>
+                </tr>
+            </tbody>
+        
+   </table>
+   <div class="footer1">
+       <button class="remove">批量删除</button>
+       <button class="download"> 批量下载</button>
+       <div class="page r">
+           <a href="">共12页</a>
+           <a href="">首页</a>
+           <a href="">上一页</a>
+           <a href="" class="active">1</a>
+           <a href="">2</a>
+           <a href="">3</a>
+           <a href="">下一页</a>
+           <a href="">尾页</a>
+       </div>
+   </div>
+    </main>
+    <footer id="footer">
+            Copyright © 2009 -2016 丽水市正达建筑工程有限公司 All rights reserved. 技术支持. 红点智能
+    </footer>
+    
+</body>
+</html>

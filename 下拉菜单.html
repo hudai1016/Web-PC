@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    ul li{list-style: none;}
+
+    button{
+        width: 120px;
+        height: 30px;
+        background-color: transparent;
+        border: 1px solid black;
+        box-shadow: 1px 1px 1px #999999;
+        position: relative;
+    }
+    #snajiao{
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 10px solid black;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        position:absolute;
+        right: 10px;
+        top: 10px;
+        }
+
+    ul{
+        width: 120px;
+        list-style: none;
+        border: 1px solid black;
+
+    }
+    li{
+        background-color: #ffffff;
+        line-height: 30px;
+        cursor: default;
+        text-align: center;
+        padding-right: 10px;
+        
+    }
+    li:hover{
+        background: #cccccc;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="dropmenu">
+        <button>
+            <span></span>
+            <span id="sanjiao"></span>
+        </button>
+        <ul id="menu">
+            <li>北京</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
